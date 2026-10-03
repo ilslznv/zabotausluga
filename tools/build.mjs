@@ -1,0 +1,12 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {routes} from './pages.mjs';
+import {createContentStore} from './admin-content.mjs';
+const root=new URL('../',import.meta.url);
+const dist=new URL('dist/',root);
+await mkdir(dist,{recursive:true});
+const font=await readFile(new URL('assets/fonts/Onest-Variable.ttf',dist));
+await writeFile(new URL('assets/font.css',dist), `@font-face{font-family:Onest;src:url(data:font/ttf;base64,${font.toString('base64')}) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}`);
+await createContentStore().build();
+await writeFile(new URL('assets/favicon.svg',dist),'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#f2ffe5"/><path d="M32 48 15 31C2 16 23 6 32 21 41 6 62 16 49 31Z" fill="#578631"/><circle cx="50" cy="12" r="7" fill="#f68a1f"/></svg>');
+console.log(`Built ${routes.length} pages in ${fileURLToPath(dist)}`);

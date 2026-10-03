@@ -1,0 +1,13 @@
+{
+  "name": "zabotlivaya-usluga",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "start": "node tools/server.mjs",
+    "check": "node tools/check.mjs",
+    "admin:create": "node tools/admin-user.mjs --username admin",
+    "test": "node --test tools/*.test.mjs"
+  }
+}
