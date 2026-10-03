@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Админ панель — Заботливая услуга</title><link rel="stylesheet" href="admin.css"><script src="admin.js" defer></script></head>
+<body data-admin-screen="editor">
+  <header class="admin-header">
+    <a class="admin-brand" href="/"><img src="../assets/images/logo.png" alt="Заботливая услуга"><span>Админ панель</span></a>
+    <div class="header-actions"><span id="save-state" class="save-state">Загрузка…</span><button class="button" id="preview-button" disabled>Предпросмотр</button><button class="button primary" id="save-button" disabled>Сохранить на сайте</button><button class="button quiet" id="logout-button">Выйти</button></div>
+  </header>
+  <div class="admin-shell">
+    <aside class="admin-sidebar" aria-label="Разделы управления">
+      <label class="page-label">Страница<select id="page-select" disabled><option>Загрузка…</option></select></label>
+      <nav id="editor-tabs" class="editor-tabs">
+        <button data-tab="content" aria-current="page">Тексты и ссылки</button><button data-tab="tables">Таблицы</button><button data-tab="documents">Документы</button><button data-tab="images">Изображения</button><button data-tab="galleries">Галереи</button><button data-tab="blocks">Дополнительные блоки</button><button data-tab="settings">Настройки</button><button data-tab="surveys">Ответы на опрос</button><button data-tab="versions">История изменений</button>
+      </nav>
+      <a href="/" target="_blank" rel="noopener" class="back-link">Открыть сайт ↗</a>
+    </aside>
+    <main id="editor-main" class="editor-main">
+      <div class="editor-title"><div><p class="eyebrow" id="page-name">Управление сайтом</p><h1 id="pane-title">Тексты и ссылки</h1></div><label class="search-label"><span class="sr-only">Найти текст или ссылку</span><input id="content-search" type="search" placeholder="Найти текст или ссылку" disabled></label></div>
+      <p class="status" id="editor-status" role="status" aria-live="polite">Загрузка содержимого…</p>
+      <div id="editor-workspace"></div>
+    </main>
+  </div>
+  <dialog id="admin-dialog" aria-labelledby="dialog-heading"><div class="dialog-top"><h2 id="dialog-heading"></h2><button class="button quiet" id="dialog-close" aria-label="Закрыть окно">Закрыть ×</button></div><div id="dialog-body"></div></dialog>
+</body>
+</html>

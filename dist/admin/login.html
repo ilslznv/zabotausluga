@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Вход в админ панель — Заботливая услуга</title><link rel="stylesheet" href="admin.css"><script src="admin.js" defer></script></head>
+<body data-admin-screen="login">
+  <main class="login-shell">
+    <a href="/" class="login-brand"><img src="../assets/images/logo.png" alt="Заботливая услуга"><span>Управление сайтом</span></a>
+    <section class="login-card" aria-labelledby="login-title">
+      <h1 id="login-title">Вход в админ панель</h1>
+      <p id="login-intro">Введите имя пользователя и пароль.</p>
+      <form id="login-form" hidden>
+        <label>Имя пользователя<input name="username" autocomplete="username" required minlength="3" maxlength="64"></label>
+        <label>Пароль<input name="password" type="password" autocomplete="current-password" required maxlength="256"></label>
+        <label class="check-label"><input type="checkbox" id="show-password"> Показать пароль</label>
+        <button class="button primary" type="submit" id="login-submit">Войти</button>
+      </form>
+      <div class="notice" id="setup-unavailable" hidden>Перед первым входом создайте администратора на сервере командой <code>npm run admin:create</code>.</div>
+      <p class="status" id="login-status" role="status" aria-live="polite">Проверяем доступ…</p>
+    </section>
+    <a href="/" class="back-link">← Вернуться на сайт</a>
+  </main>
+</body>
+</html>
